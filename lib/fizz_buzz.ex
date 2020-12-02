@@ -9,8 +9,18 @@ defmodule FizzBuzz do
   def handle_file_read({:ok, result}) do
     result
     |> String.split(",")
-    |> Enum.map(&String.to_integer/1)
+    |> Enum.map(&convert_and_evaluate_numbers/1)
   end
 
   def handle_file_read({:error, reason}), do: "Error reading the file: #{reason}"
+
+  def convert_and_evaluate_numbers(element) do
+    number = String.to_integer(element)
+
+    evaluate_numbers(number)
+  end
+
+  def evaluate_numbers(number) do
+
+  end
 end
